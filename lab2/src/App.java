@@ -10,14 +10,27 @@ public class App {
         // Element type: short
         // Calculate sum of the least elements of every matrix row
 
-        int rowAmountA = 2;
-        int columnAmountA = 4;
+        // int rowAmountA = 1;
+        // int columnAmountA = 1;
 
-        int rowAmountB = 5;
-        int columnAmountB = 3;
+        // int rowAmountB = 1;
+        // int columnAmountB = 1;
 
-        short[][] matrixA = generateMatrix(rowAmountA, columnAmountA);
-        short[][] matrixB = generateMatrix(rowAmountB, columnAmountB);
+        // short[][] matrixA = generateMatrix(rowAmountA, columnAmountA);
+        // short[][] matrixB = generateMatrix(rowAmountB, columnAmountB);
+
+        short[][] matrixA = {
+            {1, 2},
+            {4, 3, 7, 2},
+            {3, 8, 5}
+        };
+
+        short[][] matrixB = {
+            {8, 6, 4},
+            {9, 4},
+            {},
+            {1}
+        };
 
         short[][] matrix = directSum(matrixA, matrixB);
 
@@ -77,12 +90,22 @@ public class App {
 
         int columnAmountA = 0;
         if (rowAmountA > 0) {
-            columnAmountA = matrixA[0].length;
+            for (short[] row : matrixA) {
+                int currentColumnAmount = row.length;
+                if (currentColumnAmount > columnAmountA) {
+                    columnAmountA = currentColumnAmount;
+                }
+            }
         }
-        
+
         int columnAmountB = 0;
         if (rowAmountB > 0) {
-            columnAmountB = matrixB[0].length;
+            for (short[] row : matrixB) {
+                int currentColumnAmount = row.length;
+                if (currentColumnAmount > columnAmountB) {
+                    columnAmountB = currentColumnAmount;
+                }
+            }
         }
         
         int rowAmount = rowAmountA + rowAmountB;
@@ -90,13 +113,17 @@ public class App {
         short[][] result = new short[rowAmount][columnAmount];
 
         for (int i = 0; i < rowAmountA; i++) {
-            for (int j = 0; j < columnAmountA; j++) {
+            short[] row = matrixA[i];
+
+            for (int j = 0; j < row.length; j++) {
                 result[i][j] = matrixA[i][j];
             }
         }
 
         for (int i = 0; i < rowAmountB; i++) {
-            for (int j = 0; j < columnAmountB; j++) {
+            short[] row = matrixB[i];
+
+            for (int j = 0; j < row.length; j++) {
                 result[i + rowAmountA][j + columnAmountA] = matrixB[i][j];
             }
         }
