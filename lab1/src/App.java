@@ -19,13 +19,11 @@ public class App {
         boolean problemHappened = false;
 
         if (a > n) {
-            System.out.println("'a' is bigger than 'n'. Please, correct it");
-            problemHappened = true;
+            System.out.println("Warning: 'a' is bigger than 'n'");
         }
 
         if (b > m) {
-            System.out.println("'b' is bigger than 'm'. Please, correct it");
-            problemHappened = true;
+            System.out.println("Warning: 'b' is bigger than 'm'");
         }
 
         for (int i = a; i <= n && !problemHappened; i++) {
