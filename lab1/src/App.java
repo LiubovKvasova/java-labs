@@ -28,8 +28,8 @@ public class App {
             problemHappened = true;
         }
 
-        for (int i = a; i < n && !problemHappened; i++) {
-            for (int j = b; j < m; j++) {
+        for (int i = a; i <= n && !problemHappened; i++) {
+            for (int j = b; j <= m; j++) {
                 try {
                     result += (i + j) / (i + c);
                 } catch (Exception e) {
