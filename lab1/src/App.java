@@ -32,6 +32,8 @@ public class App {
                     double divided = i + j;
                     double divisor = i + c;
 
+                    // Without this check, Java does consider it as an exception
+                    // and the result is Infinity 
                     if (divisor == 0) {
                         throw new Exception("Divisor equals to 0");
                     }
