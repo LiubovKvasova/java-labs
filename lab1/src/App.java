@@ -16,25 +16,33 @@ public class App {
         int m = 8;
 
         double result = 0;
-        boolean exceptionHappened = false;
+        boolean problemHappened = false;
 
-        for (int i = a; i < n && !exceptionHappened; i++) {
+        if (a > n) {
+            System.out.println("'a' is bigger than 'n'. Please, correct it");
+            problemHappened = true;
+        }
+
+        if (b > m) {
+            System.out.println("'b' is bigger than 'm'. Please, correct it");
+            problemHappened = true;
+        }
+
+        for (int i = a; i < n && !problemHappened; i++) {
             for (int j = b; j < m; j++) {
                 try {
                     result += (i + j) / (i + c);
                 } catch (Exception e) {
                     String calculationExceptionMessage = "For arguments i = " + i + " and j = " + j + " an exception was thrown: " + e.getMessage();
                     System.out.println(calculationExceptionMessage);
-                    exceptionHappened = true;
+                    problemHappened = true;
                     break;
                 }
             }
         }
-        
-        
 
-        if (exceptionHappened) {
-            System.out.println("An exception was thrown, so no result can be provided.");
+        if (problemHappened) {
+            System.out.println("A problem happened, so no result can be provided.");
         } else {
             System.out.println("The result is: " + result);
         }
