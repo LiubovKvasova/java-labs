@@ -20,8 +20,8 @@ public class App {
         // final short[][] matrixB = generateMatrix(rowAmountB, columnAmountB);
 
         final short[][] matrixA = {
-            {1, 2},
-            {4, 3, 7, 2},
+            {1, 0},
+            {4, 2, 7, 2},
             {3, 8, 5}
         };
 
@@ -140,16 +140,20 @@ public class App {
             }
 
             short minimum = row[0];
+            short sumOfValues = row[0];
 
             for (int i = 1; i < row.length; i++) {
                 short currentValue = row[i];
 
                 if (currentValue < minimum) {
                     minimum = currentValue;
+                    sumOfValues = currentValue;
+                } else if (currentValue == minimum) {
+                    sumOfValues += currentValue;
                 }
             }
 
-            result += minimum;
+            result += sumOfValues;
         }
 
         return result;
