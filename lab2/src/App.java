@@ -10,22 +10,22 @@ public class App {
         // Element type: short
         // Calculate sum of the least elements of every matrix row
 
-        // int rowAmountA = 1;
-        // int columnAmountA = 1;
+        // final int rowAmountA = 1;
+        // final int columnAmountA = 1;
 
-        // int rowAmountB = 1;
-        // int columnAmountB = 1;
+        // final int rowAmountB = 1;
+        // final int columnAmountB = 1;
 
-        // short[][] matrixA = generateMatrix(rowAmountA, columnAmountA);
-        // short[][] matrixB = generateMatrix(rowAmountB, columnAmountB);
+        // final short[][] matrixA = generateMatrix(rowAmountA, columnAmountA);
+        // final short[][] matrixB = generateMatrix(rowAmountB, columnAmountB);
 
-        short[][] matrixA = {
+        final short[][] matrixA = {
             {1, 2},
             {4, 3, 7, 2},
             {3, 8, 5}
         };
 
-        short[][] matrixB = {
+        final short[][] matrixB = {
             {8, 6, 4},
             {9, 4},
             {},
