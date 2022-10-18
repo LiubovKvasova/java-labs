@@ -31,7 +31,9 @@ public class App {
         for (int i = a; i <= n && !problemHappened; i++) {
             for (int j = b; j <= m; j++) {
                 try {
-                    result += (i + j) / (i + c);
+                    double divided = i + j;
+                    double divisor = i + c;
+                    result += divided / divisor;
                 } catch (Exception e) {
                     String calculationExceptionMessage = "For arguments i = " + i + " and j = " + j + " an exception was thrown: " + e.getMessage();
                     System.out.println(calculationExceptionMessage);
