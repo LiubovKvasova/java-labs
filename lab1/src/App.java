@@ -33,6 +33,11 @@ public class App {
                 try {
                     double divided = i + j;
                     double divisor = i + c;
+
+                    if (divisor == 0) {
+                        throw new Exception("Divisor equals to 0");
+                    }
+
                     result += divided / divisor;
                 } catch (Exception e) {
                     String calculationExceptionMessage = "For arguments i = " + i + " and j = " + j + " an exception was thrown: " + e.getMessage();
