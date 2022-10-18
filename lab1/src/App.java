@@ -7,13 +7,13 @@ public class App {
         // C = 0
         // type is int
 
-        int c = 0;
+        final int c = 0;
 
-        int a = 1;
-        int b = 0;
+        final int a = 1;
+        final int b = 1;
 
-        int n = 7;
-        int m = 8;
+        final int n = 2;
+        final int m = 2;
 
         double result = 0;
         boolean problemHappened = false;
