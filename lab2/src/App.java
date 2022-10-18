@@ -54,7 +54,7 @@ public class App {
     static short[][] generateMatrix(int rowAmount, int columnAmount) {
         Random generator = new Random();
 
-        if (rowAmount == 0 || columnAmount == 0) {
+        if (rowAmount <= 0 || columnAmount <= 0) {
             return new short[0][0];
         }
 
